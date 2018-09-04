@@ -1,0 +1,35 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+security:
+  basic:
+    enabled: false
+server:
+  port: 8003
+spring:
+  application:
+    name: ddian-admin
+  datasource:
+      url: jdbc:mysql://localhost:3306/miscloud_admin?useUnicode=true&characterEncoding=utf8
+      username: root
+      password:
+#       url: jdbc:postgresql://localhost:5432/postgres
+#       username: postgres
+#       password: root
+#      url: jdbc:postgresql://192.168.1.64:5432/postgis22
+#      username: postgres
+#      password: pg
+#       url:  jdbc:postgresql://192.168.1.64:5432/postgres_test
+#       username: postgres
+#       password: pg
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: GMT+8
+mybatis:
+  mapper-locations: mapper/**Mapper.xml
+  configuration:
+      map-underscore-to-camel-case: true
+logging:
+  level:
+     com.grandtech.gmis.admin.dao: debug
